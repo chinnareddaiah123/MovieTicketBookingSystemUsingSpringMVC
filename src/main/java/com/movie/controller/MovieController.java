@@ -20,13 +20,7 @@ public class MovieController {
 	@RequestMapping("/adminLogin")
 	public String adminLogin(String emailId,String password)
 	{
-		if(adminService.adminDetailsvalidation(emailId, password))
-		{
-			return "MovieDetails";
-		}
-		else
-		{
-			return "adminLogin";
-		}
+		adminService.adminDetailsvalidation(emailId, password);
+		return "MovieDetails";
 	}
 }
