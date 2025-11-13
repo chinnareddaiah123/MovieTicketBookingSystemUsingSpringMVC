@@ -1,7 +1,9 @@
 package com.movie.controller;
 
+import com.movie.dto.MovieDetailsdto;
 import com.movie.exception.MovieException;
 import com.movie.service.AdminService;
+import com.movie.service.MovieDetailsService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MovieController {
     @Autowired
     public AdminService adminService;
+    @Autowired
+    public MovieDetailsService movieDetailsService;
+    
 	@RequestMapping("/adminLoginPage")
 	public String adminLoginPage()
 	{
@@ -22,5 +27,10 @@ public class MovieController {
 	{
 		adminService.adminDetailsvalidation(emailId, password);
 		return "MovieDetails";
+	}
+	@RequestMapping("/movieDetails")
+	public void MovieDetails(MovieDetailsdto movieDetialsdto) {
+		movieDetailsService.movieDetailsValidation(movieDetialsdto);
+
 	}
 }

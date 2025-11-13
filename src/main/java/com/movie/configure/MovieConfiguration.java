@@ -1,5 +1,9 @@
 package com.movie.configure;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -12,5 +16,12 @@ public class MovieConfiguration {
 	{
 		return new InternalResourceViewResolver("/",".jsp");
 	}
-
+	 @Bean
+	public EntityManagerFactory createEntityManagerFactory() {
+		return  Persistence.createEntityManagerFactory("MovieTicketBookingSystemUsing_SpringMVC");
+	}
+	 @Bean
+	public EntityManager createEntityManager(EntityManagerFactory entityManagerFactory) {
+		return entityManagerFactory.createEntityManager();
+	}
 }
