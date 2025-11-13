@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Entity
+@javax.persistence.Entity
 public class MovieDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
