@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class MovieDetailsdto {
 	public static String theatername="Viswanath Multiplex";
-//	private int movieId;
+	private int movieId;
 	private String movieName;
 	private String screenNo;
 	private double TicketPrice;

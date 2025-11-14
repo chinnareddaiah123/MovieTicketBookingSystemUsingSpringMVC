@@ -1,5 +1,7 @@
 package com.movie.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,5 +21,9 @@ public class MovieDetailsService {
 		movieDetails.setShowTimeings(movieDetailsdto.getShowTimeings());
 		movieDetails.setTicketPrice(movieDetailsdto.getTicketPrice());
 		moviesDao.insertionMovieDetails(movieDetails);
+	}
+	
+	public List<MovieDetailsdto> getMovieDetails() {
+		return moviesDao.getMovieDetails();
 	}
 }

@@ -8,7 +8,7 @@
 </head>
 <body>
 <center>
-<h1>Movie Details</h1>
+<h1>Enter Movie Details</h1>
 <form action="movieDetails">
 <input placeholder="Enter Screeen Number" name="screenNo">
 <br>

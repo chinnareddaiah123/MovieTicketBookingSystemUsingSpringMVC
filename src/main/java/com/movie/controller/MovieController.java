@@ -5,8 +5,11 @@ import com.movie.exception.MovieException;
 import com.movie.service.AdminService;
 import com.movie.service.MovieDetailsService;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -29,8 +32,16 @@ public class MovieController {
 		return "MovieDetails";
 	}
 	@RequestMapping("/movieDetails")
-	public void MovieDetails(MovieDetailsdto movieDetialsdto) {
+	public String MovieDetails(MovieDetailsdto movieDetialsdto) {
 		movieDetailsService.movieDetailsValidation(movieDetialsdto);
-
+		return "redirect:/displayMovieDetails";
+	}
+	@RequestMapping("/displayMovieDetails")
+	public String DisplaymovieDetails(Model model) {
+		List<MovieDetailsdto> detailsList= movieDetailsService.getMovieDetails();
+	
+		model.addAttribute("DetailsList",detailsList);
+		//model.addAttribute("theaterName", "viswanath");
+		return "DisplayMovieDetails";
 	}
 }
