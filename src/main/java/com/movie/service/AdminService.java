@@ -1,29 +1,41 @@
 package com.movie.service;
 
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.movie.dao.AdminDao;
+import com.movie.dto.AdminDetailsdto;
+import com.movie.entity.AdminDetails;
 import com.movie.exception.AdminLoginException;
 
 @Service
+@Transactional
 public class AdminService {
-	public void adminDetailsvalidation(String emailId,String password)
+	@Autowired
+	public AdminDao adminDao;
+	public boolean adminLogin(String emailId,String password)
+	{ 
+	
+		if( adminDao.adminLogin(emailId, password))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	public void adminRegistration(AdminDetailsdto adminDetailsdto)
 	{
-	
-		if(emailId.equalsIgnoreCase("kishore@gmail.com"))
-		{
-			
-		}
-		else {
-			throw new AdminLoginException("Invalid Emailid");
-		}
-		if(password.equalsIgnoreCase("113271147"))
-		{
-		 
-		}
-		else {
-			throw new AdminLoginException("Invalid Password");
-		}
-	
+		AdminDetails adminDetails=new AdminDetails();
+		adminDetails.setEmail(adminDetailsdto.getEmail());
+		adminDetails.setMobileNumber(adminDetailsdto.getMobileNumber());
+		adminDetails.setName(adminDetailsdto.getName());
+		adminDetails.setPassword(adminDetailsdto.getPassword());
+		adminDetails.setTheaterName(adminDetailsdto.getTheaterName());
+		adminDao.insertionAdminDetails(adminDetails);
 	}
 
 }

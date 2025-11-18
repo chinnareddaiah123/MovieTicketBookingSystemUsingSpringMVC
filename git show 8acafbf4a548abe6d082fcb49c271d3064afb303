@@ -1,0 +1,23 @@
+[33mcommit 71ab2738490ea8eea10d53aaf3a4fcff6c1bf9d0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: ChinnaReddaiah <reddaiahnaidukavuturu@gmail.com>
+Date:   Wed Nov 12 15:31:40 2025 +0530
+
+    excepton updation
+
+[33mcommit d8c8f32c2e0a5f2671439825b55d6ad3ae0598bb[m
+Author: ChinnaReddaiah <reddaiahnaidukavuturu@gmail.com>
+Date:   Wed Nov 12 14:57:08 2025 +0530
+
+    added admin login and admin  details validation
+
+[33mcommit ed9aa0104abf4acc852777ca0f0d44b86777c079[m
+Author: ChinnaReddaiah <reddaiahnaidukavuturu@gmail.com>
+Date:   Tue Nov 11 11:21:31 2025 +0530
+
+    added controller package
+
+[33mcommit 8acafbf4a548abe6d082fcb49c271d3064afb303[m
+Author: ChinnaReddaiah <reddaiahnaidukavuturu@gmail.com>
+Date:   Tue Nov 11 09:48:42 2025 +0530
+
+    adding new project

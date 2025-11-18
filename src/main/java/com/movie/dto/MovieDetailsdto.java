@@ -1,5 +1,7 @@
 package com.movie.dto;
 
+import org.springframework.stereotype.Component;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,13 +9,18 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Component
 public class MovieDetailsdto {
-	public static String theatername="Viswanath Multiplex";
-//	private int movieId;
-	private String movieName;
-	private String screenNo;
-	private double TicketPrice;
-	private int availableSeats;
-	private String showTimeings;
 
+    private String theaterName ;  
+
+    private String movieName;
+
+    private String screenNo;
+
+    private double ticketPrice; 
+
+    private int availableSeats;
+
+    private String showTimings; 
 }
