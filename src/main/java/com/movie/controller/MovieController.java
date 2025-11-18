@@ -12,8 +12,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+=======
+>>>>>>> 4a8bda843b6b79d1c35ba1d9a17660cf2947e544
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -60,6 +63,7 @@ public class MovieController {
 	{
 		return "MovieDetails";
 	}
+<<<<<<< HEAD
 	@RequestMapping("/showOptions")
 	public String showOperations()
 	{
@@ -102,5 +106,19 @@ public class MovieController {
 	public String userOperations()
 	{
 		return "UserOperations";
+=======
+	@RequestMapping("/movieDetails")
+	public String MovieDetails(MovieDetailsdto movieDetialsdto) {
+		movieDetailsService.movieDetailsValidation(movieDetialsdto);
+		return "redirect:/displayMovieDetails";
+	}
+	@RequestMapping("/displayMovieDetails")
+	public String DisplaymovieDetails(Model model) {
+		List<MovieDetailsdto> detailsList= movieDetailsService.getMovieDetails();
+	
+		model.addAttribute("DetailsList",detailsList);
+		//model.addAttribute("theaterName", "viswanath");
+		return "DisplayMovieDetails";
+>>>>>>> 4a8bda843b6b79d1c35ba1d9a17660cf2947e544
 	}
 }

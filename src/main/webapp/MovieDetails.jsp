@@ -68,6 +68,7 @@
 <body>
 
 <center>
+<<<<<<< HEAD
 <h1>Movie Details</h1>
 
 <div class="container">
@@ -89,6 +90,22 @@
 
 </div>
 
+=======
+<h1>Enter Movie Details</h1>
+<form action="movieDetails">
+<input placeholder="Enter Screeen Number" name="screenNo">
+<br>
+<input placeholder="Enter Movie Name" name="movieName">
+<br>
+<input placeholder="Enter available Seats" name="availableSeats">
+<br>
+<input placeholder="Enter Show Timings" name="showTimeings">
+<br>
+<input placeholder="Enter Ticket Price" name="TicketPrice">
+<br>
+<input type="submit" >
+</form>
+>>>>>>> 4a8bda843b6b79d1c35ba1d9a17660cf2947e544
 </center>
 
 </body>
